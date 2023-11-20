@@ -1,0 +1,33 @@
+<div class="grid grid-cols-6 mt-10">
+    <form (ngSubmit)="addSuper()" autocomplete="off" class="bg-white p-5 rounded-lg shadow-lg col-start-2 col-span-4">
+        <div class="mb-3">
+            <label for="nombre" 
+                   class="block uppercase font-bold mb-1
+                    text-gray-600">Nombre
+            </label>
+            <input id="nombre" 
+                   class="w-full border-2 p-2 rounded-md placeholder-gray-400" 
+                   type="text" placeholder="Nombre Alimento"
+                   name="nombre"
+                   [(ngModel)]="alimentos.nombre"
+            >
+        </div>
+
+        <!-- <div>
+            <label for="cantidad" 
+                   class="block uppercase font-bold mb-1 
+                   text-gray-600">Cantidad
+            </label>
+            <input id="cantidad" 
+                   class="w-full border-2 p-2 rounded-md placeholder-gray-400" 
+                   type="number" 
+                   placeholder="0"
+            >
+        </div> -->
+
+        <div class="flex justify-between">
+            <button class="bg-red-600 px-3 py-2 mt-3 rounded-md text-white uppercase">Agregar</button>
+            <button (click)="removerLocalstorage()" type="button" class="bg-gray-700 px-3 py-2 mt-3 rounded-md text-white uppercase">Limpiar</button>
+        </div>
+    </form>
+</div>

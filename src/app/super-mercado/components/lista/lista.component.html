@@ -1,0 +1,19 @@
+<div class="grid grid-cols-6 mt-5">
+    <div *ngIf="listaSuper.length > 0; else condicionLista" class="bg-white p-5 rounded-lg shadow-lg col-start-2 col-span-4">
+        <h2 class="text-center text-2xl font-bold text-gray-600 mb-4">Lista de Alimentos</h2>
+        <div *ngFor="let item of listaSuper; let i = index" class="flex justify-between items-center">
+            <p class="font-normal text-lg  capitalize">{{ item.nombre }}</p>
+            <button (click)="deleteSuper(item.id)" class="bg-white px-2 mb-3 text-black border-red-500 border
+                   hover:bg-red-600 hover:text-white rounded-full 
+                   transition duration-700 ease-in-out hover:-translate-y-1 
+                   hover:scale-110">X
+            </button>
+        </div>
+    </div>
+
+    <ng-template #condicionLista>
+        <div class="bg-white p-5 rounded-lg shadow-lg col-start-2 col-span-4">
+            <h2 class="text-center text-2xl font-bold text-gray-600">No Hay Alimentos</h2>
+        </div>
+    </ng-template>
+</div>
